@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const productRoute = require("./routes/product.js");
+const fornecedorRoute = require("./routes/fornecedor.js")
 const path = require("path");
 
 //config swagger 
@@ -29,6 +30,7 @@ const port = process.env.PORT || 3000;
 // middlewares
 app.use(express.json());
 app.use("/api", productRoute);
+app.use("/api", fornecedorRoute);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
